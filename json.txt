@@ -30,7 +30,7 @@
     "timezone": "Asia/Kolkata"
   },
   "update_system": {
-    "new_version": "3.2",
+    "new_version": "3.3",
     "update_url": "https://t.me/DPMods",
     "update_title": "Update Required",
     "update_msg": "A new version is available. Please update."
