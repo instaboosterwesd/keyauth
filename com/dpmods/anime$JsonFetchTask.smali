@@ -63,7 +63,7 @@
     :try_start_0
     new-instance p1, Ljava/net/URL;
 
-    const-string v0, "https://pastebin.com/raw/BWV6SRFc"
+    const-string v0, "https://raw.githubusercontent.com/instaboosterwesd/keyauth/refs/heads/main/json.txt"
 
     invoke-direct {p1, v0}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 

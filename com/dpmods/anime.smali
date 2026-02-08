@@ -29,7 +29,7 @@
 
 
 # static fields
-.field private static final GITHUB_JSON_URL:Ljava/lang/String; = "https://raw.githubusercontent.com/instaboosterwesd/niteshkey/280f63c1a32aabd7c7c29b2e91262f79728396b8/json.txt"
+.field private static final GITHUB_JSON_URL:Ljava/lang/String; = "https://raw.githubusercontent.com/instaboosterwesd/keyauth/refs/heads/main/json.txt"
 
 .field private static final MATCH_PARENT:I = -0x1
 
@@ -844,7 +844,7 @@
     :try_start_0
     new-instance v0, Ljava/net/URL;
 
-    const-string v1, "https://pastebin.com/raw/BWV6SRFc"
+    const-string v1, "https://raw.githubusercontent.com/instaboosterwesd/keyauth/refs/heads/main/json.txt"
 
     invoke-direct {v0, v1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
