@@ -6,10 +6,10 @@
     "key_validity": "24h"
   },
   "shortener": {
-    "base_url": "https://xtglinks.com/api",
-    "api_token": "e866b423bb5ae2597c657c9fd6288e8e5d113a47",
+    "base_url": "https://earnreverse.fun/api",
+    "api_token": "52TbtFCoyJMmDJdDGQNR97mhb613",
     "json_key": "shortenedUrl",
-    "destination_trick": "https://translate.google.com/?sl=auto&tl=en&op=translate&text="
+    "destination_trick": "https://YOUR_HOSTED_PAGE.com/key.html?device="
   },
   "ui_text": {
     "dialog_title": "DPMods",

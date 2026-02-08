@@ -31,6 +31,10 @@
 # static fields
 .field private static final GITHUB_JSON_URL:Ljava/lang/String; = "https://raw.githubusercontent.com/instaboosterwesd/keyauth/refs/heads/main/json.txt"
 
+.field private static final GITHUB_TOKEN:Ljava/lang/String; = "ghp_REPLACE_WITH_YOUR_TOKEN"
+
+.field private static final GITHUB_REPO:Ljava/lang/String; = "instaboosterwesd/keyauth"
+
 .field private static final MATCH_PARENT:I = -0x1
 
 .field private static final VIDEO_FILE_NAME:Ljava/lang/String; = "dp.mp4"
@@ -129,11 +133,11 @@
 
     iput-object v0, p0, Lcom/dpmods/anime;->INFO_MSG:Ljava/lang/String;
 
-    const-string v0, "https://xtglinks.com/api"
+    const-string v0, "https://earnreverse.fun/api"
 
     iput-object v0, p0, Lcom/dpmods/anime;->SHORTENER_BASE:Ljava/lang/String;
 
-    const-string v0, "e866b423bb5ae2597c657c9fd6288e8e5d113a47"
+    const-string v0, "52TbtFCoyJMmDJdDGQNR97mhb613"
 
     iput-object v0, p0, Lcom/dpmods/anime;->SHORTENER_TOKEN:Ljava/lang/String;
 
@@ -141,7 +145,7 @@
 
     iput-object v0, p0, Lcom/dpmods/anime;->SHORTENER_KEY_NAME:Ljava/lang/String;
 
-    const-string v0, "https://translate.google.com/?sl=auto&tl=en&op=translate&text="
+    const-string v0, "https://YOUR_HOSTED_PAGE.com/key.html?device="
 
     iput-object v0, p0, Lcom/dpmods/anime;->KEY_PAGE_BASE:Ljava/lang/String;
 

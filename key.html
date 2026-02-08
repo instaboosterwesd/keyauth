@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Verification</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            background: linear-gradient(145deg, #1a0020, #050505);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            border: 1px solid #9d46ff;
+            max-width: 400px;
+            width: 90%;
+            animation: fadeIn 1s ease-out;
+        }
+        h1 { color: #9d46ff; margin-bottom: 1rem; }
+        .key-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 1.5rem 0;
+            border: 1px dashed #9d46ff;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .key-box:active { transform: scale(0.95); }
+        .hint { color: #888; font-size: 0.9rem; }
+        .copy-btn {
+            background: #6200ee;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .copy-btn:hover { background: #7c4dff; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verify Device</h1>
+        <p>Your verification key is ready:</p>
+        <div class="key-box" id="keyDisplay">LOADING...</div>
+        <button class="copy-btn" onclick="copyKey()">Copy Key</button>
+        <p class="hint">Paste this key into the app to verify your device.</p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const key = urlParams.get('key') || 'NO KEY FOUND';
+        document.getElementById('keyDisplay').innerText = key;
+
+        function copyKey() {
+            navigator.clipboard.writeText(key).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.innerText;
+                btn.innerText = 'COPIED!';
+                btn.style.background = '#4caf50';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = '#6200ee';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
