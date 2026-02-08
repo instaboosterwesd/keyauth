@@ -9,7 +9,7 @@
     "base_url": "https://earnreverse.fun/api",
     "api_token": "52TbtFCoyJMmDJdDGQNR97mhb613",
     "json_key": "shortenedUrl",
-    "destination_trick": "https://YOUR_HOSTED_PAGE.com/key.html?device="
+    "destination_trick": "https://keyauth.gt.tc/key.html?device="
   },
   "ui_text": {
     "dialog_title": "DPMods",
