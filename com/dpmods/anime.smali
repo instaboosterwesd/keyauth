@@ -833,7 +833,7 @@
 .end method
 
 .method private fetchConfiguration()V
-    .registers 5
+    .registers 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -1226,9 +1226,9 @@
     if-eqz v0, :cond_19d
 
     .line 224
-    const-string v1, "force_update_date"
+    const-string v1, "new_version"
 
-    const-string v2, "01/01/2020"
+    const-string v2, "3.2"
 
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1268,30 +1268,19 @@
     iput-object v0, p0, Lcom/dpmods/anime;->updateMsg:Ljava/lang/String;
 
     .line 228
-    new-instance v0, Ljava/text/SimpleDateFormat;
+    invoke-static {v1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    const-string v2, "dd/MM/yyyy"
+    move-result-wide v1
 
-    sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
+    const-string v3, "3.2"
 
-    invoke-direct {v0, v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+    invoke-static {v3}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    .line 229
-    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->parse(Ljava/lang/String;)Ljava/util/Date;
+    move-result-wide v3
 
-    move-result-object v0
+    cmpl-double v0, v1, v3
 
-    .line 230
-    new-instance v1, Ljava/util/Date;
-
-    invoke-direct {v1}, Ljava/util/Date;-><init>()V
-
-    .line 231
-    invoke-virtual {v1, v0}, Ljava/util/Date;->after(Ljava/util/Date;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_19d
+    if-lez v0, :cond_19d
 
     const/4 v0, 0x1
 
