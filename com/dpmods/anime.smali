@@ -1720,15 +1720,37 @@
 # virtual methods
 .method public showDialog()V
     .registers 18
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()V"
-        }
-    .end annotation
 
     .line 237
     move-object/from16 v0, p0
 
+    iget-boolean v1, v0, Lcom/dpmods/anime;->isUpdateMode:Z
+
+    if-eqz v1, :cond_update_redirect_skip
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.VIEW"
+
+    iget-object v3, v0, Lcom/dpmods/anime;->updateUrl:Ljava/lang/String;
+
+    invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
+    const/high16 v2, 0x10000000
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+
+    iget-object v2, v0, Lcom/dpmods/anime;->context:Landroid/content/Context;
+
+    invoke-virtual {v2, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    return-void
+
+    :cond_update_redirect_skip
     new-instance v1, Landroid/app/Dialog;
 
     iget-object v2, v0, Lcom/dpmods/anime;->context:Landroid/content/Context;
