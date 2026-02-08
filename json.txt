@@ -30,7 +30,7 @@
     "timezone": "Asia/Kolkata"
   },
   "update_system": {
-    "force_update_date": "01/01/2026",
+    "new_version": "3.3",
     "update_url": "https://t.me/DPMods",
     "update_title": "Update Required",
     "update_msg": "A new version is available. Please update."
